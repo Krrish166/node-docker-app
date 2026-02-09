@@ -1,12 +1,7 @@
-const express = require('express');
-const app = express();
+var http = require('http');
 
-const PORT = 3000;
-
-app.get('/', (req, res) => {
-  res.send('Hello from Node.js Docker App 🚀');
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+//create a server object:
+http.createServer(function (req, res) {
+  res.write('Welcome to DevOps Training'); //write a response to the client
+  res.end(); //end the response
+}).listen(81); //the server object listens on port 80
